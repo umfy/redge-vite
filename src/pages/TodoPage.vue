@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, watchEffect } from 'vue'
 import { useTodoStore } from '../stores/todo'
+import type {Todo} from '../stores/todo'
 import TodoItem from '../components/todo/TodoItem.vue'
 import LoaderBase from '../components/design/loader/LoaderBase.vue'
 import DialogBase from '../components/design/dialog/DialogBase.vue'
@@ -37,7 +38,7 @@ const startIndex = ref(0)
 const endIndex = ref(0)
 const filteredLength = ref(0)
 const paginationMessage = ref('')
-const filteredTodoList = ref()
+const filteredTodoList = ref<Todo[]>([])
 
 watchEffect(() => {
   filteredTodoList.value = setFilteredTodoList()
