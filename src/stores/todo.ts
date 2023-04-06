@@ -1,10 +1,7 @@
 import { defineStore } from 'pinia'
-import {
-  fetchGet,
-  fetchPut,
-  fetchDelete,
-  fetchPost,
-} from '../hooks/fetchMethods'
+import { fetchGet, fetchPut, fetchDelete, fetchPost } from '../hooks/fetchMethods'
+
+const apiUrl = import.meta.env.VITE_API_BASE_URL + '/todos'
 
 export interface Todo {
   userId: number
@@ -37,22 +34,20 @@ export const useTodoStore = defineStore('todo', {
   state: (): State => ({
     todoList: [],
     isLoading: false,
-    hasTodoListFetched: false,
+    hasTodoListFetched: false
   }),
   getters: {
     getTodoListCount: (state) => state.todoList.length,
     getTodoById: (state) => {
       return (todoId: number) => state.todoList.find((todo) => todo.id === todoId)
-    },
+    }
   },
   actions: {
     async fetchTodoList() {
       if (this.hasTodoListFetched) return
       this.isLoading = true
       try {
-        const data = await fetchGet(
-          'https://jsonplaceholder.typicode.com/todos'
-        )
+        const data = await fetchGet(apiUrl)
         this.todoList = data
         this.hasTodoListFetched = true
       } catch (error) {
@@ -64,9 +59,7 @@ export const useTodoStore = defineStore('todo', {
     async deleteTodo(todoId: number) {
       this.isLoading = true
       try {
-        const data = await fetchDelete(
-          `https://jsonplaceholder.typicode.com/todos/${todoId}`
-        )
+        const data = await fetchDelete(`${apiUrl}/${todoId}`)
         this.todoList = this.todoList.filter((todo) => todo.id !== todoId)
       } catch (error) {
         console.log(error)
@@ -77,10 +70,7 @@ export const useTodoStore = defineStore('todo', {
     async editTodo(todo: Todo) {
       this.isLoading = true
       try {
-        const data = await fetchPut(
-          `https://jsonplaceholder.typicode.com/todos/${todo.id}`,
-          todo
-        )
+        const data = await fetchPut(`${apiUrl}/${todo.id}`, todo)
         if (data) {
           // the api will return undefined when editing a new item (id 200+)
           const index = this.todoList.findIndex((el) => el.id === data.id)
@@ -103,10 +93,7 @@ export const useTodoStore = defineStore('todo', {
     async addTodo(todo: Todo) {
       this.isLoading = true
       try {
-        const data = await fetchPost(
-          `https://jsonplaceholder.typicode.com/todos`,
-          todo
-        )
+        const data = await fetchPost(apiUrl, todo)
         // every new item will be given id of 201 which will cause bugs in edits / deletes
         data.id = this.todoList.length + 1 // this is maintaining unique ids
         this.todoList.unshift(data)
@@ -115,6 +102,6 @@ export const useTodoStore = defineStore('todo', {
       } finally {
         this.isLoading = false
       }
-    },
-  },
+    }
+  }
 })
