@@ -21,16 +21,17 @@ const route = useRoute()
 const prefersDarkScheme = window.matchMedia(
   '(prefers-color-scheme: dark)'
 ).matches
+const html = document.querySelector('html')
 if (prefersDarkScheme) {
-  document.querySelector('html')?.toggleAttribute('data-dark-mode')
+  html?.toggleAttribute('data-dark-mode')
 } else {
-  document.querySelector('html')?.toggleAttribute('data-light-mode')
+  html?.toggleAttribute('data-light-mode')
 }
 
 const isThemeDark = ref(prefersDarkScheme)
 watch(isThemeDark, () => {
-  document.querySelector('html')?.toggleAttribute('data-dark-mode')
-  document.querySelector('html')?.toggleAttribute('data-light-mode')
+  html?.toggleAttribute('data-dark-mode')
+  html?.toggleAttribute('data-light-mode')
 })
 </script>
 
