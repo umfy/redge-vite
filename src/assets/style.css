@@ -1,0 +1,172 @@
+:root {
+  /** primary **/
+  --color-primary: #3880ff;
+  --color-primary-rgb: 56, 128, 255;
+  --color-primary-contrast: #ffffff;
+  --color-primary-contrast-rgb: 255, 255, 255;
+  --color-primary-shade: #3171e0;
+  --color-primary-tint: #4c8dff;
+
+  /** dark **/
+  --color-dark: #222428;
+  --color-dark-rgb: 34, 36, 40;
+  --color-dark-contrast: #ffffff;
+  --color-dark-contrast-rgb: 255, 255, 255;
+  --color-dark-shade: #1e2023;
+  --color-dark-tint: #383a3e;
+
+  /** medium **/
+  --color-medium: #92949c;
+  --color-medium-rgb: 146, 148, 156;
+  --color-medium-contrast: #ffffff;
+  --color-medium-contrast-rgb: 255, 255, 255;
+  --color-medium-shade: #808289;
+  --color-medium-tint: #9d9fa6;
+
+  /** light **/
+  --color-light: #f4f5f8;
+  --color-light-rgb: 244, 245, 248;
+  --color-light-contrast: #000000;
+  --color-light-contrast-rgb: 0, 0, 0;
+  --color-light-shade: #d7d8da;
+  --color-light-tint: #f5f6f9;
+
+  /** box shadows **/
+  --color-shadow-light: rgba(0, 0, 0, 0.2);
+  --color-shadow-light-shade: rgba(0, 0, 0, 0.4);
+
+  --color-shadow-dark: rgba(255, 255, 255, 0.2);
+  --color-shadow-dark-shade: rgba(255, 255, 255, 0.4);
+}
+
+[data-dark-mode] {
+  --color-primary: #428cff;
+  --color-primary-rgb: 66, 140, 255;
+  --color-primary-contrast: #ffffff;
+  --color-primary-contrast-rgb: 255, 255, 255;
+  --color-primary-shade: #3a7be0;
+  --color-primary-tint: #5598ff;
+
+  --color-dark: #f4f5f8;
+  --color-dark-rgb: 244, 245, 248;
+  --color-dark-contrast: #000000;
+  --color-dark-contrast-rgb: 0, 0, 0;
+  --color-dark-shade: #d7d8da;
+  --color-dark-tint: #f5f6f9;
+
+  --color-medium: #989aa2;
+  --color-medium-rgb: 152, 154, 162;
+  --color-medium-contrast: #000000;
+  --color-medium-contrast-rgb: 0, 0, 0;
+  --color-medium-shade: #86888f;
+  --color-medium-tint: #a2a4ab;
+
+  --color-light: #222428;
+  --color-light-rgb: 34, 36, 40;
+  --color-light-contrast: #ffffff;
+  --color-light-contrast-rgb: 255, 255, 255;
+  --color-light-shade: #1e2023;
+  --color-light-tint: #383a3e;
+
+  --color-shadow-dark: rgba(0, 0, 0, 0.2);
+  --color-shadow-dark-shade: rgba(0, 0, 0, 0.4);
+
+  --color-shadow-ligth: rgba(255, 255, 255, 0.2);
+  --color-shadow-ligth-shade: rgba(255, 255, 255, 0.4);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: #428cff;
+    --color-primary-rgb: 66, 140, 255;
+    --color-primary-contrast: #ffffff;
+    --color-primary-contrast-rgb: 255, 255, 255;
+    --color-primary-shade: #3a7be0;
+    --color-primary-tint: #5598ff;
+
+    --color-dark: #f4f5f8;
+    --color-dark-rgb: 244, 245, 248;
+    --color-dark-contrast: #000000;
+    --color-dark-contrast-rgb: 0, 0, 0;
+    --color-dark-shade: #d7d8da;
+    --color-dark-tint: #f5f6f9;
+
+    --color-medium: #989aa2;
+    --color-medium-rgb: 152, 154, 162;
+    --color-medium-contrast: #000000;
+    --color-medium-contrast-rgb: 0, 0, 0;
+    --color-medium-shade: #86888f;
+    --color-medium-tint: #a2a4ab;
+
+    --color-light: #222428;
+    --color-light-rgb: 34, 36, 40;
+    --color-light-contrast: #ffffff;
+    --color-light-contrast-rgb: 255, 255, 255;
+    --color-light-shade: #1e2023;
+    --color-light-tint: #383a3e;
+
+    --color-shadow-dark: rgba(0, 0, 0, 0.2);
+    --color-shadow-dark-shade: rgba(0, 0, 0, 0.4);
+
+    --color-shadow-ligth: rgba(255, 255, 255, 0.2);
+    --color-shadow-ligth-shade: rgba(255, 255, 255, 0.4);
+  }
+
+  [data-light-mode] {
+    /** primary **/
+    --color-primary: #3880ff;
+    --color-primary-rgb: 56, 128, 255;
+    --color-primary-contrast: #ffffff;
+    --color-primary-contrast-rgb: 255, 255, 255;
+    --color-primary-shade: #3171e0;
+    --color-primary-tint: #4c8dff;
+
+    /** dark **/
+    --color-dark: #222428;
+    --color-dark-rgb: 34, 36, 40;
+    --color-dark-contrast: #ffffff;
+    --color-dark-contrast-rgb: 255, 255, 255;
+    --color-dark-shade: #1e2023;
+    --color-dark-tint: #383a3e;
+
+    /** medium **/
+    --color-medium: #92949c;
+    --color-medium-rgb: 146, 148, 156;
+    --color-medium-contrast: #ffffff;
+    --color-medium-contrast-rgb: 255, 255, 255;
+    --color-medium-shade: #808289;
+    --color-medium-tint: #9d9fa6;
+
+    /** light **/
+    --color-light: #f4f5f8;
+    --color-light-rgb: 244, 245, 248;
+    --color-light-contrast: #000000;
+    --color-light-contrast-rgb: 0, 0, 0;
+    --color-light-shade: #d7d8da;
+    --color-light-tint: #f5f6f9;
+
+    /** box shadows **/
+    --color-shadow-light: rgba(0, 0, 0, 0.2);
+    --color-shadow-light-shade: rgba(0, 0, 0, 0.4);
+
+    --color-shadow-dark: rgba(255, 255, 255, 0.2);
+    --color-shadow-dark-shade: rgba(255, 255, 255, 0.4);
+  }
+
+  body {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    color-scheme: light dark;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+  
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    background-color: var(--color-light-shade);
+    color: var(--color-light-contrast);
+  }
+}
