@@ -1,4 +1,6 @@
 import { defineStore } from 'pinia'
+ 
+const apiUrl = import.meta.env.VITE_API_BASE_URL + '/users'
 
 interface Geo {
   lat: string
@@ -50,7 +52,7 @@ export const useUserStore = defineStore('user', {
       if (this.hasUserListFetched) return
       this.isLoading = true
       try {
-        const result = await fetch('https://jsonplaceholder.typicode.com/users')
+        const result = await fetch(apiUrl)
         const data = await result.json()
         this.userList = data
         this.hasUserListFetched = true
